@@ -31,7 +31,8 @@ def _create_model_from_hub(hub_module, is_training, input_ids, input_mask,
   tags = set()
   if is_training:
     tags.add("train")
-  albert_module = hub.Module(hub_module, tags=tags, trainable=True)
+  #albert_module = hub.Module(hub_module, tags=tags, trainable=True)
+  albert_module = hub.Module("gs://bert_example_2020_02/tf-hub-albert-temp", tags=tags, trainable=True)
   albert_inputs = dict(
       input_ids=input_ids,
       input_mask=input_mask,

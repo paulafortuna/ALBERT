@@ -1,3 +1,4 @@
+six==1.12.0
 # Run pip install --upgrade pip if tensorflow 1.15 cannot be found
 tensorflow==1.15   # CPU Version of TensorFlow
 tensorflow_hub==0.7

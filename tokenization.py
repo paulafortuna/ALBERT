@@ -257,7 +257,9 @@ class FullTokenizer(object):
   def from_hub_module(cls, hub_module, spm_model_file):
     """Get the vocab file and casing info from the Hub module."""
     with tf.Graph().as_default():
-      albert_module = hub.Module(hub_module)
+      print(hub_module)
+      #albert_module = hub.Module(hub_module)
+      albert_module = hub.Module("gs://bert_example_2020_02/tf-hub-albert-temp")
       tokenization_info = albert_module(signature="tokenization_info",
                                         as_dict=True)
       with tf.Session() as sess:
